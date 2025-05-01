@@ -49,7 +49,7 @@ export default function Footer() {
 
   const changeLanguage = (languageCode: string, languageName: string): void => {
     // This function triggers Google Translate
-    const select = document.querySelector('.goog-te-combo');
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
     if (select) {
       select.value = languageCode;
       select.dispatchEvent(new Event('change'));
@@ -61,24 +61,24 @@ export default function Footer() {
   return (
     <footer className="py-12 text-center" style={{ backgroundColor: activeTheme.primary }}>
       <div className="container mx-auto px-4">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="max-w-2xl mx-auto space-y-6"
-    >
-      <h2 className="text-4xl font-serif font-semibold text-white tracking-wide">
-        {weddingConfig.couple.bride.name} &amp; {weddingConfig.couple.groom.name}
-      </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl mx-auto space-y-6"
+        >
+          <h2 className="text-4xl font-serif font-semibold text-white tracking-wide">
+            {weddingConfig.couple.bride.name} &amp; {weddingConfig.couple.groom.name}
+          </h2>
 
-      <p className="text-lg text-white/90 leading-relaxed">
-        Our heartfelt gratitude for your presence and blessings as we begin this beautiful journey together.
-      </p>
+          <p className="text-lg text-white/90 leading-relaxed">
+            Our heartfelt gratitude for your presence and blessings as we begin this beautiful journey together.
+          </p>
 
-      <div className="border-t border-white/20 pt-6 text-sm text-white/70">
-        <p>Made with ❤️ by <span className="font-medium text-white">Bhovan</span></p>
-        <p className="mt-1">© {new Date().getFullYear()} All rights reserved</p>
-      </div>
+          <div className="border-t border-white/20 pt-6 text-sm text-white/70">
+            <p>Made with ❤️ by <span className="font-medium text-white">Bhovan</span></p>
+            <p className="mt-1">© {new Date().getFullYear()} All rights reserved</p>
+          </div>
 
           {/* Hidden Google Translate Element */}
           <div id="google_translate_element" className="hidden"></div>
@@ -88,7 +88,7 @@ export default function Footer() {
             <button
               onClick={() => setShowLanguageMenu(!showLanguageMenu)}
               className="flex items-center px-5 py-2 bg-white text-black rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-300"
-              style={{ focusRingColor: activeTheme.accent }}
+              style={{ boxShadow: `0 0 0 2px ${activeTheme.accent}` }} // Corrected the focusRingColor
               aria-expanded={showLanguageMenu}
               aria-haspopup="true"
             >

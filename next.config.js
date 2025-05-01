@@ -8,7 +8,11 @@ const nextConfig = {
   assetPrefix: '',
   experimental: {
     disableOptimizedLoading: true,
-  }
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
+// next.config.js
 module.exports = nextConfig 

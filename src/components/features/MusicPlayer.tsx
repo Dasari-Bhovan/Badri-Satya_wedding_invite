@@ -16,7 +16,7 @@ export default function MusicPlayer({ isPlaying, setIsPlaying }: MusicPlayerProp
   const [hasInteracted, setHasInteracted] = useState(false);
 
   const trackSrc =currentTrack.src ; // replace with your own if needed
-  console.log(trackSrc,"sd")
+
   // Load event
   useEffect(() => {
     const audio = audioRef.current;
