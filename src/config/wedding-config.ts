@@ -181,7 +181,7 @@ export const weddingConfig = {
           portrait: "images/couple/anna2fi.JPG"
         }
       },
-      parents: "Son of Ms.Rama Lakshmi Shirisha",
+      parents: "Son of Mrs.Rama Lakshmi Shirisha",
       about: "Deskripsi singkat tentang mempelai pria",
     },
     // firstMeet: "Dengan izin Allah, perjalanan kami dimulai. 'Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya' (QS. Ar-Rum: 21)",
@@ -221,7 +221,7 @@ export const weddingConfig = {
         title: "Reception",
         time:"7:30 PM",
         description: "Reception Ceremony",
-        image: "images/events/reception.jpg",
+        image: "images/events/reception.webp",
         venue:"M S Function Hall ",
         address:"Beside Dmart,Ongole",
         mapLink:"https://maps.app.goo.gl/Qn7GiAtCStDMnSp79"
