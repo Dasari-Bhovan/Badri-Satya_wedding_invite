@@ -1,3 +1,6 @@
+import { address } from "framer-motion/client";
+import { Thumbnails } from "yet-another-react-lightbox/plugins";
+
 export interface WeddingConfig {
   couple: {
     bride: {
@@ -43,7 +46,7 @@ export interface WeddingConfig {
     }>;
   };
   event: {
-    akad: {
+    Marraige: {
       date: string;
       time: string;
       location: string;
@@ -149,17 +152,17 @@ export const themes = {
 export const weddingConfig = {
   couple: {
     bride: {
-      name: "Mempelai Wanita",
-      fullName: "R",
+      name: " Satya Sritha",
+      fullName: "Satya Sritha Madisetty",
       photo: {
-        url: "wedding-invitation/images/couple/bride.webp",
-        aspectRatio: "portrait",
+        url: "images/couple/vadina solo.JPG",
+        aspectRatio: "1:1",
         frame: {
-          "1:1": "wedding-invitation/images/couple/frame-photo-1.webp",
-          portrait: "wedding-invitation/images/couple/frame-photo-2.webp"
+          "1:1": "images/couple/vadina final frame.png",
+          portrait: "images/couple/vadina final frame.png"
         }
       },
-      parents: "Putri dari Bpk ... dan Ibu ...",
+      parents: "Daughter of Mr.Srinivasa Rao and Mrs.Himabindu",
       about: "Deskripsi singkat tentang mempelai wanita",
       socialMedia: {
         instagram: "https://instagram.com/",
@@ -168,77 +171,77 @@ export const weddingConfig = {
       }
     },
     groom: {
-      name: "Mempelai Pria",
-      fullName: "FR",
+      name: "Badrinath",
+      fullName: "Badrinath Dasari",
       photo: {
-        url: "wedding-invitation/images/couple/groom.webp",
+        url: "images/couple/anna solo.JPG",
         aspectRatio: "1:1",
         frame: {
-          "1:1": "wedding-invitation/images/couple/frame-photo-1.webp",
-          portrait: "wedding-invitation/images/couple/frame-photo-2.webp"
+          "1:1": "images/couple/anna2fi.PNG",
+          portrait: "images/couple/anna2fi.JPG"
         }
       },
-      parents: "Putra dari Bpk ... dan Ibu ...",
+      parents: "Son of Ms.Rama Lakshmi Shirisha",
       about: "Deskripsi singkat tentang mempelai pria",
-      socialMedia: {
-        instagram: "https://instagram.com/nayrbef",
-        facebook: undefined,
-        twitter: undefined
-      }
     },
-    firstMeet: "Dengan izin Allah, perjalanan kami dimulai. 'Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya' (QS. Ar-Rum: 21)",
+    // firstMeet: "Dengan izin Allah, perjalanan kami dimulai. 'Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya' (QS. Ar-Rum: 21)",
     loveStory: [
       {
-        date: "Januari 2022",
-        title: "Pertemuan Pertama",
-        description: "Atas kehendak Allah, kami dipertemukan dalam majelis ilmu. 'Sesungguhnya Allah menciptakan jodoh-jodoh di antara kalian' (HR. Muslim). Kami bersyukur atas pertemuan ini.",
-        image: "wedding-invitation/images/story/first-meet.webp"
+        date: "2025-05-13",
+        title: "Haldi",
+        time:"5:00 PM",
+        description: "Haldi Ceremony",
+        image: "images/events/haldi.jpg",
+        venue:"At Home",
+        address:"Ongole",
+        mapLink:"https://goo.gl/maps/qxqYyk43g3CJBX1e8?g_st=aw"
       },
       {
-        date: "Maret 2022",
-        title: "Ta'aruf",
-        description: "Kami memulai proses ta'aruf dengan niat yang tulus. 'Wanita itu dinikahi karena empat hal: karena hartanya, keturunannya, kecantikannya, dan agamanya. Maka pilihlah yang memiliki agama, niscaya kamu akan beruntung' (HR. Bukhari).",
-        image: "wedding-invitation/images/gallery/prewedding-1.webp"
+        date: "2025-05-15",
+        title: "Engagement",
+        time:"7:30 PM",
+        description: "Engagement Ceremony",
+        image: "images/events/engagement.jpg",
+        venue:"Mounaswamy Mutt",
+        address:"Near Gogarbham dam,Tirumala",
+        mapLink:"https://maps.app.goo.gl/g8mm63wqLBi8xt1PA"
       },
       {
-        date: "Juni 2022",
-        title: "Khitbah",
-        description: "Dengan restu orang tua, kami memantapkan niat untuk membangun rumah tangga yang sakinah, mawaddah, wa rahmah. 'Dan nikahkanlah orang-orang yang masih membujang di antara kamu, dan juga orang-orang yang layak dari hamba-hamba sahayamu yang lelaki dan perempuan' (QS. An-Nur: 32).",
-        image: "wedding-invitation/images/gallery/prewedding-2.webp"
+        date: "2025-05-16",
+        title: "Marriage",
+        time:"4:58 AM",
+        description: "Marriage Ceremony",
+        image: "images/events/marriage.webp",
+        venue:"Mounaswamy Mutt",
+        address:"Near Gogarbham dam,Tirumala",
+        mapLink:"https://maps.app.goo.gl/g8mm63wqLBi8xt1PA"
       },
       {
-        date: "Desember 2022",
-        title: "Ramadhan Pertama Bersama",
-        description: "Bersama menjalani ibadah Ramadhan, saling mengingatkan dalam kebaikan. 'Sebaik-baik kamu adalah yang paling baik terhadap istrinya' (HR. Tirmidzi).",
-        image: "wedding-invitation/images/gallery/moment-3.webp"
+        date: "2025-05-17",
+        title: "Reception",
+        time:"7:30 PM",
+        description: "Reception Ceremony",
+        image: "images/events/reception.jpg",
+        venue:"M S Function Hall ",
+        address:"Beside Dmart,Ongole",
+        mapLink:"https://maps.app.goo.gl/Qn7GiAtCStDMnSp79"
       },
-      {
-        date: "Juni 2023",
-        title: "Lamaran",
-        description: "Dengan doa dan restu keluarga, kami melangkah ke tahap lamaran. 'Barangsiapa yang menikah, maka ia telah menyempurnakan separuh agamanya' (HR. Baihaqi).",
-        image: "wedding-invitation/images/gallery/prewedding-3.webp"
-      },
-      {
-        date: "Masa Depan",
-        title: "Perjalanan Suci",
-        description: "Kami berdoa agar Allah SWT memberkahi pernikahan kami. 'Ya Allah, berkahilah kami dalam pasangan kami dan berkahilah pasangan kami untuk kami' (HR. Abu Dawud).",
-        image: "wedding-invitation/images/gallery/moment-1.webp"
-      }
+      
     ]
   },
   event: {
-    akad: {
-      date: "2026-01-01",
-      time: "08:00",
+    Marraige: {
+      date: "2025-05-16",
+      time: "4:58",
       venue: "Nama Tempat",
       address: "Alamat Lengkap",
       mapLink: "Google Maps Link",
       dresscode: "Putih / Broken White",
-      additional_info: "Info tambahan tentang acara akad"
+      additional_info: "Info tambahan tentang acara Marraige"
     },
     reception: {
-      date: "2026-01-01",
-      time: "11:00",
+      date: "2025-05-17",
+      time: "20:00",
       venue: "Nama Tempat",
       address: "Alamat Lengkap",
       mapLink: "Google Maps Link",
@@ -278,44 +281,48 @@ export const weddingConfig = {
       {
         name: "GoPay",
         number: "08888024148",
-        logo: "wedding-invitation/images/logos/gopay.webp"
+        logo: "images/logos/gopay.webp"
       },
       // {
       //   name: "OVO",
       //   number: "08888024148",
-      //   logo: "wedding-invitation/images/logos/ovo.webp"
+      //   logo: "images/logos/ovo.webp"
       // },
       {
         name: "ShopeePay",
         number: "08",
-        logo: "wedding-invitation/images/logos/shopeepay.webp"
+        logo: "images/logos/shopeepay.webp"
       }
     ]
   },
   gallery: {
     prewedding: [
       {
-        url: '/images/gallery/optimized/prewedding-1.webp',
-        caption: 'Our First Date - Where It All Began'
+        url: '/images/gallery/optimized/c1-min.webp',
+        thumbnail:'/images/gallery/optimized/c1-min-crop.PNG',
+        caption: ' First Pic'
       },
       {
-        url: '/images/gallery/optimized/prewedding-2.webp',
-        caption: 'Beach Getaway - Our First Vacation'
+        url: '/images/gallery/optimized/c2-min.webp',
+        thumbnail:'/images/gallery/optimized/c2-min-crop.PNG',
+        caption: 'Second Pic '
       },
       {
-        url: '/images/gallery/optimized/prewedding-3.webp',
-        caption: 'Hiking Together - Overcoming Challenges'
+        url: '/images/gallery/optimized/c3-min.webp',
+        thumbnail:'/images/gallery/optimized/c3-min-crop.PNG',
+        caption: 'Third Pic'
       },
       {
-        url: '/images/gallery/optimized/moment-1.webp',
-        caption: 'First Concert - Sharing Our Love for Music'
+        url: '/images/gallery/optimized/c4-min.webp',
+        thumbnail:'/images/gallery/optimized/c4-min-crop.PNG',
+        caption: 'Fourth Pic'
       }
     ]
   },
   music: {
     tracks: [
       {
-        src: '/wedding-invitation/music/song1.mp3',
+        src: '/music/song1.mp3',
         title: 'Lagu 1',
         artist: 'Artis 1'
       }

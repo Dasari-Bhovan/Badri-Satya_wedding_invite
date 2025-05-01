@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Apply the Cinzel font globally or to specific elements */
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 @layer utilities {
   .transform-style-preserve-3d {
@@ -15,3 +21,51 @@
     perspective: 1000px;
   }
 }
+
+
+/* Fix Google Translate dropdown styling */
+/* Hide Google Translate logo */
+.goog-logo-link {
+  display: none !important;
+}
+
+/* Ensure the dropdown looks clean */
+/* .goog-te-combo {
+  background-color: #ffffff;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 0.375rem;
+  border: 1px solid #ddd;
+  font-size: 0.875rem;
+  font-family: inherit;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.goog-te-combo:hover {
+  background-color: #f0f0f0;
+}
+
+.goog-te-gadget {
+  display: none !important;
+}
+
+.goog-te-gadget-simple {
+  display: inline-block;
+  font-size: 0.875rem;
+}
+
+.goog-te-combo option {
+  font-size: 14px;
+  padding: 10px;
+  color: #444;
+}
+
+select.goog-te-combo {
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #444;
+  background-color: white;
+  padding: 10px;
+  border-radius: 0.375rem;
+} */

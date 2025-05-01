@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/wedding-invitation',
-  assetPrefix: '/wedding-invitation/',
+  basePath: '',
+  assetPrefix: '',
   experimental: {
     disableOptimizedLoading: true,
   }

@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
-// import { motion } from 'framer-motion';
-import { weddingConfig } from '@/config/wedding-config';
+import { useRef, useEffect, useCallback, useState } from 'react';
 import AudioControls from './AudioControls';
+import { weddingConfig } from '@/config/wedding-config';
+import { track } from 'framer-motion/client';
 
 interface MusicPlayerProps {
   isPlaying: boolean;
@@ -10,90 +10,64 @@ interface MusicPlayerProps {
 
 export default function MusicPlayer({ isPlaying, setIsPlaying }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
-
   const playlist = weddingConfig.music.tracks;
+  const currentTrack = playlist[0]
+  const [hasInteracted, setHasInteracted] = useState(false);
 
-  const handleNextTrack = useCallback(() => {
-    setCurrentTrackIndex((prev) => (prev + 1) % playlist.length);
-  }, [playlist.length]);
-
+  const trackSrc =currentTrack.src ; // replace with your own if needed
+  console.log(trackSrc,"sd")
+  // Load event
   useEffect(() => {
-    const currentAudio = audioRef.current;
-    
+    const audio = audioRef.current;
+    if (!audio) return;
+
     const handleCanPlayThrough = () => {
       setIsLoaded(true);
     };
 
-    if (currentAudio) {
-      currentAudio.addEventListener('canplaythrough', handleCanPlayThrough);
-      currentAudio.addEventListener('ended', handleNextTrack);
+    audio.addEventListener('canplaythrough', handleCanPlayThrough);
+    return () => {
+      audio.removeEventListener('canplaythrough', handleCanPlayThrough);
+    };
+  }, []);
 
-      return () => {
-        currentAudio.removeEventListener('canplaythrough', handleCanPlayThrough);
-        currentAudio.removeEventListener('ended', handleNextTrack);
-      };
+  // Play/Pause logic
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio || !isLoaded) return;
+
+    if (isPlaying) {
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          if (err.name === 'NotAllowedError' && !hasInteracted) {
+            const handleInteraction = () => {
+              setHasInteracted(true);
+              audio.play().catch(() => setIsPlaying(false));
+              window.removeEventListener('click', handleInteraction);
+              window.removeEventListener('touchstart', handleInteraction);
+            };
+            window.addEventListener('click', handleInteraction);
+            window.addEventListener('touchstart', handleInteraction);
+          } else {
+            setIsPlaying(false);
+          }
+        });
+      }
+    } else {
+      audio.pause();
     }
-  }, [handleNextTrack]);
+  }, [isPlaying, isLoaded, hasInteracted, setIsPlaying]);
 
   const handleTogglePlayback = useCallback(() => {
     setIsPlaying(!isPlaying);
   }, [isPlaying, setIsPlaying]);
 
-  useEffect(() => {
-    const currentAudio = audioRef.current;
-    if (currentAudio && isLoaded) {
-      if (isPlaying) {
-        // Create a promise chain to handle Safari's autoplay restrictions
-        const playPromise = currentAudio.play();
-        
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              // Audio started playing
-            })
-            .catch((error) => {
-              // Handle Safari's autoplay restrictions
-              if (error.name === 'NotAllowedError') {
-                // Wait for user interaction before attempting to play
-                const handleFirstInteraction = () => {
-                  currentAudio.play()
-                    .then(() => {
-                      window.removeEventListener('click', handleFirstInteraction);
-                      window.removeEventListener('touchstart', handleFirstInteraction);
-                    })
-                    .catch(() => {
-                      setIsPlaying(false);
-                    });
-                };
-                
-                window.addEventListener('click', handleFirstInteraction);
-                window.addEventListener('touchstart', handleFirstInteraction);
-              } else {
-                setIsPlaying(false);
-              }
-            });
-        }
-      } else {
-        currentAudio.pause();
-      }
-    }
-  }, [isPlaying, isLoaded, setIsPlaying]);
-
-  const currentTrack = playlist[currentTrackIndex];
-
   return (
     <>
-      <audio
-        ref={audioRef}
-        src={currentTrack.src}
-        preload="auto"
-      />
-      <AudioControls 
-        isPlaying={isPlaying}
-        onToggle={handleTogglePlayback}
-      />
+      <audio ref={audioRef} src={trackSrc} preload="auto" />
+      <AudioControls isPlaying={isPlaying} onToggle={handleTogglePlayback} />
     </>
   );
 }

@@ -7,7 +7,7 @@ A modern and elegant wedding invitation website built with Next.js, Tailwind CSS
 ### Main Sections
 1. **Hero Section** - Beautiful landing page with couple's photo and wedding details
 2. **Couple Profile** - Detailed information about the bride and groom
-3. **Event Details** - Information about akad and reception ceremonies
+3. **Event Details** - Information about Marraige and reception ceremonies
 4. **Love Story** - Timeline of the couple's relationship journey
 5. **Gallery** - Collection of prewedding and engagement photos
 6. **Quranic Verses** - Inspirational verses from the Quran

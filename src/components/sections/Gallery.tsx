@@ -23,7 +23,7 @@ export default function Gallery() {
   }));
 
   return (
-    <section className="py-20" style={{ backgroundColor: activeTheme.background }}>
+    <section className="py-5" style={{ backgroundColor: activeTheme.background }}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function Gallery() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-serif mb-4" style={{ color: activeTheme.text }}>
-            Pre-Wedding Photos
+            Gallery
           </h2>
         </motion.div>
 
@@ -55,7 +55,7 @@ export default function Gallery() {
               }}
             >
               <Image
-                src={`${basePath}${photo.url}`}
+                src={`${basePath}${photo.thumbnail}`}
                 alt="Pre-wedding photo"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"

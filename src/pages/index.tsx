@@ -6,7 +6,7 @@ import StoryTimeline from '@/components/sections/StoryTimeline';
 import EventDetails from '@/components/sections/EventDetails';
 import Gallery from '@/components/sections/Gallery';
 import DigitalEnvelope from '@/components/sections/DigitalEnvelope';
-import GuestBook from '@/components/sections/GuestBook';
+// import GuestBook from '@/components/sections/GuestBook';
 import RSVP from '@/components/sections/RSVP';
 import LiveStreaming from '@/components/sections/LiveStreaming';
 // import ShareButton from '@/components/features/ShareButton';
@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useRouter } from 'next/router';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -45,14 +46,14 @@ const Home: NextPage = () => {
         <Hero guestName={guestName} />
         <CoupleProfile />
         <CountdownTimer />
-        <EventDetails />
         <StoryTimeline />
+        <EventDetails />
         <Gallery />
-        <LiveStreaming />
-        <DigitalEnvelope />
-        <GuestBook />
-        <RSVP guestName={guestName} />
-        <GiftRegistry />
+        {/* <LiveStreaming /> */}
+        {/* <DigitalEnvelope /> */}
+        {/* <GuestBook /> */}
+        {/* <RSVP guestName={guestName} /> */}
+        {/* <GiftRegistry /> */}
       </MainLayout>
     </ThemeProvider>
   );

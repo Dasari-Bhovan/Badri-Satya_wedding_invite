@@ -21,7 +21,7 @@ export default function CountdownTimer() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const difference = +new Date(weddingConfig.event.akad.date) - +new Date();
+      const difference = +new Date(weddingConfig.event.Marraige.date) - +new Date();
       
       if (difference > 0) {
         setTimeLeft({

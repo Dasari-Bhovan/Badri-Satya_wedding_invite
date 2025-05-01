@@ -36,7 +36,7 @@ const PhotoContainer = ({ photo, name, aspectRatio, isBride }: {
         style={themeStyle}>
       </div>
       
-      <div className={`absolute inset-[-40px] ${isBride ? 'bride-flowers' : 'groom-ornaments'}`}
+      <div className={`absolute inset-[-40px] m-4 ${isBride ? 'bride-flowers' : 'groom-ornaments'}`}
         style={themeStyle}>
       </div>
       
@@ -111,7 +111,7 @@ const PhotoContainer = ({ photo, name, aspectRatio, isBride }: {
 export default function CoupleProfile() {
   return (
     <motion.section 
-      className="py-20 bg-gradient-to-b from-transparent to-gray-50"
+      className="py-5 bg-gradient-to-b from-transparent to-gray-50"
       variants={scrollAnimation}
       initial="offscreen"
       whileInView="onscreen"
@@ -119,18 +119,17 @@ export default function CoupleProfile() {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          {/* <h2 className="text-3xl font-serif mb-4">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2> */}
-          <div className="relative w-64 h-32 mx-auto mb-4">
+          <div className="relative w-64 h-32 mx-auto mb-4 hidden">
             <Image
-              src="wedding-invitation/images/background/bismillah.png"
-              alt="Bismillah"
+              src="wedding-invitation/public/public/images/background/1.png"
+              alt="gjgjk"
               fill
-              className="object-contain"
+              className="object-contain" 
             />
           </div>
-          <div className="relative bg-black/20 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
-            <p className="text-white text-lg font-medium leading-relaxed">In the Name of Allah, the Most Beneficent, the Most Merciful</p>
-            <p className="mt-4 text-white/90 leading-relaxed">Dengan memohon rahmat dan ridho-Mu Ya Allah, izinkan kami mengundang Bapak/Ibu/Saudara untuk menghadiri hari bahagia pernikahan kami.</p>
+          <div className="relative bg-yellow-500/75 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
+            <p className="text-white text-xl font-large leading-relaxed">Our story begins with love and grows with blessings</p>
+            {/* <p className="mt-4 text-white/90 leading-relaxed">Dengan memohon rahmat dan ridho-Mu Ya Allah, izinkan kami mengundang Bapak/Ibu/Saudara untuk menghadiri hari bahagia pernikahan kami.</p> */}
           </div>
         </div>
 
@@ -148,10 +147,10 @@ export default function CoupleProfile() {
               aspectRatio={weddingConfig.couple.bride.photo.aspectRatio as "1:1" | "portrait"}
               isBride={true}
             />
-            <h3 className="text-3xl font-serif mb-4 mt-10">{weddingConfig.couple.bride.name}</h3>
+            <h3 className="text-3xl font-serif mb-4 mt-10">{weddingConfig.couple.bride.fullName}</h3>
             <p className="text-gray-600 mb-4">{weddingConfig.couple.bride.parents}</p>
-            <p className="text-gray-500 mb-4">{weddingConfig.couple.bride.about}</p>
-            <div className="flex justify-center gap-4">
+            {/* <p className="text-gray-500 mb-4">{weddingConfig.couple.bride.about}</p> */}
+            {/* <div className="flex justify-center gap-4">
               {weddingConfig.couple.bride.socialMedia?.instagram && (
                 <Instagram url={weddingConfig.couple.bride.socialMedia.instagram} />
               )}
@@ -161,7 +160,7 @@ export default function CoupleProfile() {
               {weddingConfig.couple.bride.socialMedia?.twitter && (
                 <Twitter url={weddingConfig.couple.bride.socialMedia.twitter} />
               )}
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div 
@@ -177,10 +176,10 @@ export default function CoupleProfile() {
               aspectRatio={weddingConfig.couple.groom.photo.aspectRatio as "1:1" | "portrait"}
               isBride={false}
             />
-            <h3 className="text-3xl font-serif mb-4 mt-10">{weddingConfig.couple.groom.name}</h3>
+            <h3 className="text-3xl font-serif mb-4 mt-10">{weddingConfig.couple.groom.fullName}</h3>
             <p className="text-gray-600 mb-4">{weddingConfig.couple.groom.parents}</p>
-            <p className="text-gray-500 mb-4">{weddingConfig.couple.groom.about}</p>
-            <div className="flex justify-center gap-4">
+            {/* <p className="text-gray-500 mb-4">{weddingConfig.couple.groom.about}</p> */}
+            {/* <div className="flex justify-center gap-4">
               {weddingConfig.couple.groom.socialMedia.instagram && (
                 <Instagram url={weddingConfig.couple.groom.socialMedia.instagram} />
               )}
@@ -190,7 +189,7 @@ export default function CoupleProfile() {
               {weddingConfig.couple.groom.socialMedia.twitter && (
                 <Twitter url={weddingConfig.couple.groom.socialMedia.twitter} />
               )}
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>

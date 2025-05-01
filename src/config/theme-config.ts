@@ -47,7 +47,8 @@ export const themes = {
     accent: "#A27B5C",     // Warm brown
     text: "#2C3639",       // Charcoal
     background: "#FFFFFF"
-  }
+  },
+  
 };
 
 export const activeTheme = themes.dustyBlue; // Default theme

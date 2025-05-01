@@ -25,9 +25,13 @@ export default {
         'wedding-gold': '#D4AF37',
       },
       fontFamily: {
-        sans: ['var(--font-primary)', ...fontFamily.sans],
-        serif: ['var(--font-secondary)', ...fontFamily.serif],
+        cinzel: ['Cinzel'],
+        quicksand: ['Quicksand', 'sans-serif'],
       },
+      // fontFamily: {
+      //   sans: ['var(--font-primary)', ...fontFamily.sans],
+      //   serif: ['var(--font-secondary)', ...fontFamily.serif],
+      // },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'wedding-pattern': "url('/public/images/pattern/subtle-pattern.webp')",
@@ -62,5 +66,6 @@ export default {
       },
     },
   },
+  
   plugins: [],
 } satisfies Config;
