@@ -299,22 +299,22 @@ export const weddingConfig = {
     prewedding: [
       {
         url: '/images/gallery/optimized/c1-min.webp',
-        thumbnail:'/images/gallery/optimized/c1-min-crop.PNG',
+        thumbnail:'/images/gallery/optimized/c1-min-crop.webp',
         caption: ' First Pic'
       },
       {
         url: '/images/gallery/optimized/c2-min.webp',
-        thumbnail:'/images/gallery/optimized/c2-min-crop.PNG',
+        thumbnail:'/images/gallery/optimized/c2-min-crop.webp',
         caption: 'Second Pic '
       },
       {
         url: '/images/gallery/optimized/c3-min.webp',
-        thumbnail:'/images/gallery/optimized/c3-min-crop.PNG',
+        thumbnail:'/images/gallery/optimized/c3-min-crop.webp',
         caption: 'Third Pic'
       },
       {
         url: '/images/gallery/optimized/c4-min.webp',
-        thumbnail:'/images/gallery/optimized/c4-min-crop.PNG',
+        thumbnail:'/images/gallery/optimized/c4-min-crop.webp',
         caption: 'Fourth Pic'
       }
     ]
